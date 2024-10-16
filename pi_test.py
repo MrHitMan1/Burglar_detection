@@ -34,8 +34,10 @@ def get_distance():
         
     while GPIO.input(ECHO) == 1:
         pulse_end = time.time()
+        print("echo signal 1")
         
     pulse_duration = pulse_end - pulse_start
+    print("Pulse duration is:",pulse_duration)
     # Calculate distance (34300 cm/s is the speed of sound)
     distance = pulse_duration * 17150
     distance = round(distance, 2)
@@ -46,6 +48,7 @@ try:
     print("Burglar detection system activated...")
     
     while True:
+        get_distance()
         # Check motion detection from PIR sensor
         if GPIO.input(PIR_PIN):
             print("Motion detected!")
@@ -54,6 +57,7 @@ try:
             
             # Check distance from the ultrasonic sensor
             distance = get_distance()
+
             print(f"Distance to object: {distance} cm")
             
             if distance < 40:  # Trigger based on distance
