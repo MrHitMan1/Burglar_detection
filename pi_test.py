@@ -7,18 +7,18 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 # PIR Sensor
-PIR_PIN = 17
+PIR_PIN = 5
 GPIO.setup(PIR_PIN, GPIO.IN)
 
 # Ultrasonic Sensor
-TRIG = 23
-ECHO = 24
+TRIG = 2
+ECHO = 3
 GPIO.setup(TRIG, GPIO.OUT)
 GPIO.setup(ECHO, GPIO.IN)
 
 # Buzzer and LED
-BUZZER_PIN = 18
-LED_PIN = 22
+BUZZER_PIN = 1
+LED_PIN = 4
 GPIO.setup(BUZZER_PIN, GPIO.OUT)
 GPIO.setup(LED_PIN, GPIO.OUT)
 
